@@ -1,0 +1,14 @@
+version: '2'
+services:
+  app:
+    image: kwokhou/casinoapp
+    env_file:
+      - .env
+    volumes:
+      - db-data:/var/www/app/db
+    ports:
+      - "8080:8080"
+
+volumes:
+  db-data:
+    driver: local

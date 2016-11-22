@@ -24,3 +24,7 @@
 /config/deploy.rb
 /config/deploy/cas.yml
 /config/deploy/database.yml
+
+# Ignore docker related configurations
+.env
+docker-compose.override.yml
