@@ -1,7 +1,8 @@
 version: '2'
 services:
   app:
-    image: kwokhou/casinoapp
+    build: .
+    container_name: casinoapp
     env_file:
       - .env
     volumes:

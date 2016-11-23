@@ -1,5 +1,5 @@
 # Using base image from official ruby docker hub
-FROM ruby:2.2.3
+FROM ruby:2.2.6
 
 # Install essential linux packages
 RUN apt-get update -qq && apt-get install -y --no-install-recommends \
@@ -28,7 +28,7 @@ COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 
 # Finish establishing our Ruby enviornment
-RUN bundle install --deployment
+RUN bundle install
 
 # Copy the CASinoApp into image
 COPY . .
