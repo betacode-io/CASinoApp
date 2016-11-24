@@ -1,3 +1,5 @@
+# This Dockerfile is use to build image for development purposes
+
 # Using base image from official ruby docker hub
 FROM ruby:2.2.6
 
@@ -28,13 +30,9 @@ COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 
 # Finish establishing our Ruby enviornment
-RUN bundle install --deployment --without development test
+RUN bundle install
 
 # Copy the CASinoApp into image
 COPY . .
 
-# Compile assets
-RUN bundle exec rake assets:precompile RAILS_ENV=production
-
 CMD ["config/containers/app_cmd.sh"]
-
